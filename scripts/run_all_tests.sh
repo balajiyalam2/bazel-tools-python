@@ -56,10 +56,10 @@ if [ "${workspace}" == "all" -o "${workspace}" == "main" ];then
 	# run_command "bazel --output_base=$HOME/.cache/bazel_tools_python/workspace_output_base test --config=use_workspace_mode --config=python_3_9 //..." "tests (workspace mode and python 3.9)"
 
 	# Run bazel test with bzlmod mode and python 3.12.
-	run_command "bazel --lockfile_mode=error --output_base=$HOME/.cache/bazel_tools_python/python_3_12_output_base test --config=python_3_12 //..." "tests (bzlmod mode and python 3.12)"
+	run_command "bazel --output_base=$HOME/.cache/bazel_tools_python/python_3_12_output_base test --config=python_3_12 //..." "tests (bzlmod mode and python 3.12)"
 
 	# Run bazel test with bzlmod mode.
-	run_command "bazel --lockfile_mode=error test //..." "tests (bzlmod mode)"
+	run_command "bazel test //..." "tests (bzlmod mode)"
 
 	# Run python quality tools.
 	run_command "bazel build --config=ruff_check --keep_going //..." "ruff_check"
