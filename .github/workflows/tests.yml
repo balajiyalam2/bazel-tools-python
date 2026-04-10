@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: bazelbuild/setup-bazelisk@v3
-      - run: scripts/run_all_tests.sh
+      - run: ./scripts/run_all_tests.sh
