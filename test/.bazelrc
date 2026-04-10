@@ -2,6 +2,7 @@ common --lockfile_mode=update
 common --enable_platform_specific_config
 
 common:use_workspace_mode --enable_bzlmod
+common:use_workspace_mode --enable_workspace
 
 # Python toolchain configurations
 common --flag_alias=python=@rules_python//python/config_settings:python_version
