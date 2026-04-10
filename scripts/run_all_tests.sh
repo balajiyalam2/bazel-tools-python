@@ -62,7 +62,7 @@ if [ "${workspace}" == "all" -o "${workspace}" == "main" ];then
 	run_command "bazel test //..." "tests (bzlmod mode)"
 
 	# Run python quality tools.
-	run_command "bazel build --config=ruff_check --keep_going //..." "ruff_check"
+	run_command "bazel build --lockfile_mode=error --config=ruff_check --keep_going //..." "ruff_check"
 	run_command "bazel build --config=ruff_format --keep_going //..." "ruff_format"
 	run_command "bazel build --config=pylint --keep_going //..." "pylint"
 	run_command "bazel build --config=black --keep_going //..." "black"
