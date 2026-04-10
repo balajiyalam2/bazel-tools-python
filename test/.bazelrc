@@ -1,4 +1,4 @@
-common --lockfile_mode=off
+common --lockfile_mode=update
 common --enable_platform_specific_config
 
 common:use_workspace_mode --noenable_bzlmod
