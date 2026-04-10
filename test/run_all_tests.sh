@@ -55,8 +55,8 @@ run_command(){
 cd $(dirname $0)
 
 # Run checks with bzlmod mode.
-run_command "bazel test //..." "tests (bzlmod mode)"
-run_command "bazel build --config=ruff_check --keep_going //..." "ruff_check (bzlmod mode)"
+run_command "bazel test --lockfile_mode=error //..." "tests (bzlmod mode)"
+run_command "bazel build --lockfile_mode=error --config=ruff_check --keep_going //..." "ruff_check (bzlmod mode)"
 run_command "bazel build --config=ruff_format --keep_going //..." "ruff_format (bzlmod mode)"
 run_command "bazel build --config=pylint --keep_going //..." "pylint (bzlmod mode)"
 run_command "bazel build --config=black --keep_going //..." "black (bzlmod mode)"
