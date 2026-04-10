@@ -9,6 +9,7 @@ build --verbose_failures
 
 test --test_output=errors
 
+common:use_workspace_mode --enable_bzlmod
 common:use_workspace_mode --enable_workspace
 
 coverage --combined_report=lcov
